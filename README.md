@@ -1,6 +1,8 @@
 
 # 0축 구조공식에 의한 리만가설 해석 및 수치 검증 패키지
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20656275.svg)](https://doi.org/10.5281/zenodo.20656275)
+
 이 저장소는 **0축 구조공식에 의한 리만가설 해석**을 코드, 수치 결과, 대시보드, 문서로 정리한 재현 가능한 검증 패키지입니다.
 
 - `papers/리만가설 구조공식.pdf` : Korean version
