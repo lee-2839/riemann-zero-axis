@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Euler Product Verification Dashboard</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 32px;
+    line-height: 1.55;
+}
+h1, h2 {
+    color: #222;
+}
+code, pre {
+    background: #f4f4f4;
+    padding: 2px 4px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+    font-size: 13px;
+}
+th {
+    background: #f0f0f0;
+}
+.pass {
+    color: green;
+    font-weight: bold;
+}
+.notice {
+    background: #fff8dc;
+    border: 1px solid #e6d28a;
+    padding: 12px;
+    margin: 16px 0;
+}
+.formula {
+    background: #f7f7f7;
+    border-left: 4px solid #777;
+    padding: 12px;
+    margin: 14px 0;
+    font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<h1>Euler Product Verification Dashboard</h1>
+
+<div class="notice">
+This dashboard verifies the Euler product relation in the convergence region Re(s) &gt; 1.
+It does not claim to prove the full Riemann Hypothesis.
+</div>
+
+<h2>Zero-Axis Structural Meaning</h2>
+
+<div class="formula">
+P = prime self-rotation<br>
+E = ∏P = ∏Crit = total orbital field<br>
+Z = generation(E)
+</div>
+
+<h2>Standard Numerical Relation</h2>
+
+<div class="formula">
+ζ(s) ≈ ∏p 1 / (1 - p^(-s)), &nbsp; Re(s) &gt; 1
+</div>
+
+<h2>Run Metadata</h2>
+
+<ul>
+<li>Created at UTC: 2026-06-12T03:58:47.797762+00:00</li>
+<li>mpmath decimal precision: 80</li>
+<li>Prime max: 100000</li>
+<li>Prime count: 9592</li>
+<li>Tolerance: 0.001</li>
+<li>Passed: <span class="pass">6 / 6</span></li>
+</ul>
+
+<h2>Verification Results</h2>
+
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>s</th>
+<th>ζ(s)</th>
+<th>Euler Product</th>
+<th>Absolute Error</th>
+<th>Relative Error</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+
+            <tr>
+                <td>real_s_2</td>
+                <td>(2.0 + 0.0j)</td>
+                <td>(1.644934066848226436472415166646025189219 + 0.0j)</td>
+                <td>(1.644932747202026447175668817255789768775 + 0.0j)</td>
+                <td>0.00000131964619998929674634939023542</td>
+                <td>0.000000802248689832172397242080556602</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>real_s_3</td>
+                <td>(3.0 + 0.0j)</td>
+                <td>(1.202056903159594285399738161511449990765 + 0.0j)</td>
+                <td>(1.202056903154595876059462465902542058275 + 0.0j)</td>
+                <td>4.9984093402756956089079324901e-12</td>
+                <td>4.15821358135162132491213229943e-12</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>complex_2_plus_5i</td>
+                <td>(2.0 + 5.0j)</td>
+                <td>(0.8509629436242629572108785359083142124066 + 0.09899694613483134722717746048483239204582j)</td>
+                <td>(0.8509630359178424129972241961974569985148 + 0.09899705809285932742718021581094740350184j)</td>
+                <td>0.000000145095502473290997997060677279</td>
+                <td>0.000000145095502473290997997060677279</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>complex_2_plus_10i</td>
+                <td>(2.0 + 10.0j)</td>
+                <td>(1.197982500674184607599916761382374211803 - 0.07917049172052574727332257320728170568685j)</td>
+                <td>(1.197982594849438063229191036750433502721 - 0.07917053478218689223057268435133561309591j)</td>
+                <td>0.000000103553295572835993225539164391</td>
+                <td>0.0000000862515961330994390727034053427</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>complex_1_5_plus_5i</td>
+                <td>(1.5 + 5.0j)</td>
+                <td>(0.8096191684069198166410321399528860920289 + 0.1344735773631487971832037039351065340134j)</td>
+                <td>(0.8096492267938266461022832318757277072573 + 0.1345066475635713922440098120369850345522j)</td>
+                <td>0.0000446894258122798365137027896637</td>
+                <td>0.0000446894258122798365137027896637</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>complex_1_5_plus_14i</td>
+                <td>(1.5 + 14.0j)</td>
+                <td>(0.5452290132879393675621960195414578078795 + 0.002442458707730620937506837011490139876629j)</td>
+                <td>(0.545220514796878899776903755222051969652 + 0.002436442328272074111386991628799322849562j)</td>
+                <td>0.0000104125487799133533030227570566</td>
+                <td>0.0000104125487799133533030227570566</td>
+                <td>PASS</td>
+            </tr>
+            
+</tbody>
+</table>
+
+<h2>File Hashes</h2>
+
+<ul>
+<li>CSV SHA256: <code>b3b6e9521ec4c01bb914ffac9f9f2d44da8aaf7c3433cd31b9d3a780b62bf286</code></li>
+<li>JSON SHA256: <code>cc9df3e5603ce3ccc1c39a4109cb29f060e21f3392b45b0085add496049dbb36</code></li>
+</ul>
+
+<h2>Interpretation</h2>
+
+<p>
+This verification confirms that finite prime products approximate ζ(s)
+in the region Re(s) &gt; 1. In the proposed zero-axis structure,
+this supports the numerical connection between the prime self-rotation field
+and the zeta generation field.
+</p>
+
+<p>
+However, because the Euler product converges only for Re(s) &gt; 1,
+this verification is structurally connected to the Euler product field,
+not a direct proof of the critical-line statement Re(ρ)=1/2.
+</p>
+
+</body>
+</html>

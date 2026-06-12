@@ -1,0 +1,74 @@
+# Python cache files
+
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+
+# Python virtual environments
+
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables and local secrets
+
+.env
+.env.*
+
+# OS-specific files
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE files
+
+.vscode/
+.idea/
+
+# Temporary files
+
+*.tmp
+*.temp
+*.log
+
+# Jupyter notebook checkpoints
+
+.ipynb_checkpoints/
+
+# Build and distribution folders
+
+build/
+dist/
+*.egg-info/
+
+# Local test cache
+
+.pytest_cache/
+.mypy_cache/
+
+# Do not ignore verification results.
+
+# The following folders are intentionally kept for reproducible public verification:
+
+#
+
+# results/
+
+# results_independent/
+
+# results_euler/
+
+# results_symmetry/
+
+# results_spacing/
+
+# results_residue/
+
+#
+
+# Do not ignore:
+
+# verification_run_summary.json

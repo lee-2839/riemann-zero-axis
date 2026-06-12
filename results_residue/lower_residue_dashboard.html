@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Lower Residue Verification Dashboard</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 32px;
+    line-height: 1.55;
+}
+h1, h2 {
+    color: #222;
+}
+code, pre {
+    background: #f4f4f4;
+    padding: 2px 4px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+    font-size: 13px;
+}
+th {
+    background: #f0f0f0;
+}
+.pass {
+    color: green;
+    font-weight: bold;
+}
+.notice {
+    background: #fff8dc;
+    border: 1px solid #e6d28a;
+    padding: 12px;
+    margin: 16px 0;
+}
+.formula {
+    background: #f7f7f7;
+    border-left: 4px solid #777;
+    padding: 12px;
+    margin: 14px 0;
+    font-family: monospace;
+}
+.chart-box {
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 18px 0;
+}
+</style>
+</head>
+<body>
+
+<h1>Lower Residue Verification Dashboard</h1>
+
+<div class="notice">
+This dashboard verifies the internal lower-residue relation of the Zero-Axis structure.
+It does not claim to prove the full Riemann Hypothesis.
+</div>
+
+<h2>Zero-Axis Structural Meaning</h2>
+
+<div class="formula">
+phase difference(X, R_theta) = 180 degrees<br>
+180-degree phase difference → r generated<br>
+r ≠ 0<br>
+L_lower = r^2<br>
+L_lower &gt; 0
+</div>
+
+<h2>Numerical Residue Model</h2>
+
+<div class="formula">
+r = scale × |sin(theta / 2)|<br>
+L_lower = r^2<br>
+theta = 180 degrees → r = scale<br>
+scale &gt; 0 → L_lower &gt; 0
+</div>
+
+<h2>Run Metadata</h2>
+
+<ul>
+<li>Created at UTC: 2026-06-12T03:58:54.557616+00:00</li>
+<li>Scale: 1.0</li>
+<li>Target phase difference: 180 degrees</li>
+<li>Epsilon for nonzero check: 1e-12</li>
+<li>Test count: 7</li>
+<li>Passed: <span class="pass">7 / 7</span></li>
+</ul>
+
+<h2>Charts</h2>
+
+<div class="chart-box">
+
+<svg width="900" height="280" viewBox="0 0 900 280">
+    <text x="450.0" y="20" text-anchor="middle" font-size="16" font-weight="bold">Residue r from Phase Difference</text>
+    <text x="450.0" y="275" text-anchor="middle" font-size="12">phase difference degree</text>
+    <text x="14" y="140.0" transform="rotate(-90 14,140.0)" text-anchor="middle" font-size="12">r</text>
+
+    <line x1="70" y1="235.00" x2="870" y2="235.00" stroke="#eee"/><text x="10" y="239.00" font-size="11">0</text><line x1="70" y1="185.00" x2="870" y2="185.00" stroke="#eee"/><text x="10" y="189.00" font-size="11">0.25</text><line x1="70" y1="135.00" x2="870" y2="135.00" stroke="#eee"/><text x="10" y="139.00" font-size="11">0.5</text><line x1="70" y1="85.00" x2="870" y2="85.00" stroke="#eee"/><text x="10" y="89.00" font-size="11">0.75</text><line x1="70" y1="35.00" x2="870" y2="35.00" stroke="#eee"/><text x="10" y="39.00" font-size="11">1</text>
+    <line x1="70.00" y1="35" x2="70.00" y2="235" stroke="#eee"/><text x="60.00" y="262" font-size="11">0</text><line x1="270.00" y1="35" x2="270.00" y2="235" stroke="#eee"/><text x="260.00" y="262" font-size="11">45</text><line x1="470.00" y1="35" x2="470.00" y2="235" stroke="#eee"/><text x="460.00" y="262" font-size="11">90</text><line x1="670.00" y1="35" x2="670.00" y2="235" stroke="#eee"/><text x="660.00" y="262" font-size="11">135</text><line x1="870.00" y1="35" x2="870.00" y2="235" stroke="#eee"/><text x="860.00" y="262" font-size="11">180</text>
+
+    <line x1="70" y1="235" x2="870" y2="235" stroke="#333"/>
+    <line x1="70" y1="35" x2="70" y2="235" stroke="#333"/>
+
+    <polyline points="70.00,235.00 203.33,183.24 336.67,135.00 470.00,93.58 603.33,61.79 736.67,41.81 870.00,35.00" fill="none" stroke="#1f77b4" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div class="chart-box">
+
+<svg width="900" height="280" viewBox="0 0 900 280">
+    <text x="450.0" y="20" text-anchor="middle" font-size="16" font-weight="bold">Lower Bound L_lower = r^2</text>
+    <text x="450.0" y="275" text-anchor="middle" font-size="12">phase difference degree</text>
+    <text x="14" y="140.0" transform="rotate(-90 14,140.0)" text-anchor="middle" font-size="12">L_lower</text>
+
+    <line x1="70" y1="235.00" x2="870" y2="235.00" stroke="#eee"/><text x="10" y="239.00" font-size="11">0</text><line x1="70" y1="185.00" x2="870" y2="185.00" stroke="#eee"/><text x="10" y="189.00" font-size="11">0.25</text><line x1="70" y1="135.00" x2="870" y2="135.00" stroke="#eee"/><text x="10" y="139.00" font-size="11">0.5</text><line x1="70" y1="85.00" x2="870" y2="85.00" stroke="#eee"/><text x="10" y="89.00" font-size="11">0.75</text><line x1="70" y1="35.00" x2="870" y2="35.00" stroke="#eee"/><text x="10" y="39.00" font-size="11">1</text>
+    <line x1="70.00" y1="35" x2="70.00" y2="235" stroke="#eee"/><text x="60.00" y="262" font-size="11">0</text><line x1="270.00" y1="35" x2="270.00" y2="235" stroke="#eee"/><text x="260.00" y="262" font-size="11">45</text><line x1="470.00" y1="35" x2="470.00" y2="235" stroke="#eee"/><text x="460.00" y="262" font-size="11">90</text><line x1="670.00" y1="35" x2="670.00" y2="235" stroke="#eee"/><text x="660.00" y="262" font-size="11">135</text><line x1="870.00" y1="35" x2="870.00" y2="235" stroke="#eee"/><text x="860.00" y="262" font-size="11">180</text>
+
+    <line x1="70" y1="235" x2="870" y2="235" stroke="#333"/>
+    <line x1="70" y1="35" x2="70" y2="235" stroke="#333"/>
+
+    <polyline points="70.00,235.00 203.33,221.60 336.67,185.00 470.00,135.00 603.33,85.00 736.67,48.40 870.00,35.00" fill="none" stroke="#1f77b4" stroke-width="2"/>
+</svg>
+
+</div>
+
+<h2>Verification Results</h2>
+
+<table>
+<thead>
+<tr>
+<th>theta degrees</th>
+<th>scale</th>
+<th>r</th>
+<th>L_lower</th>
+<th>r != 0</th>
+<th>L_lower > 0</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+
+            <tr>
+                <td>0</td>
+                <td>1.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>False</td>
+                <td>False</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>30</td>
+                <td>1.0</td>
+                <td>0.25881904510252074</td>
+                <td>0.06698729810778066</td>
+                <td>True</td>
+                <td>True</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>60</td>
+                <td>1.0</td>
+                <td>0.49999999999999994</td>
+                <td>0.24999999999999994</td>
+                <td>True</td>
+                <td>True</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>90</td>
+                <td>1.0</td>
+                <td>0.7071067811865476</td>
+                <td>0.5000000000000001</td>
+                <td>True</td>
+                <td>True</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>120</td>
+                <td>1.0</td>
+                <td>0.8660254037844386</td>
+                <td>0.7499999999999999</td>
+                <td>True</td>
+                <td>True</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>150</td>
+                <td>1.0</td>
+                <td>0.9659258262890683</td>
+                <td>0.9330127018922194</td>
+                <td>True</td>
+                <td>True</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>180</td>
+                <td>1.0</td>
+                <td>1.0</td>
+                <td>1.0</td>
+                <td>True</td>
+                <td>True</td>
+                <td>PASS</td>
+            </tr>
+            
+</tbody>
+</table>
+
+<h2>File Hashes</h2>
+
+<ul>
+<li>CSV SHA256: <code>43e55ed5f1d2c0f2018378bf57586e219c7baa4c9845cc75558cee88c1a4f8cf</code></li>
+<li>JSON SHA256: <code>377e4433eec713dbf3d83274dfb6338d635bb2fc91c2863795bce857bd124a49</code></li>
+</ul>
+
+<h2>Interpretation</h2>
+
+<p>
+This verification confirms that a 180-degree phase difference generates a nonzero residue
+under the selected structural model.
+</p>
+
+<p>
+Because L_lower = r^2, any nonzero residue produces a strictly positive lower bound.
+</p>
+
+<p>
+In the Zero-Axis interpretation, this supports the statement that the lower residue is not arbitrary:
+it is generated by phase opposition and remains greater than zero.
+</p>
+
+<p>
+This is an internal structural verification. It is not a direct standard zeta-zero proof.
+</p>
+
+</body>
+</html>

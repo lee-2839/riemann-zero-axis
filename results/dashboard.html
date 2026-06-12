@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riemann Zero-Axis Numerical Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      color: #222;
+    }
+    h1, h2 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+    }
+    .box {
+      border: 1px solid #ddd;
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    code, pre {
+      background: #f3f3f3;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    pre {
+      padding: 12px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    .pass {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Riemann Zero-Axis Numerical Dashboard</h1>
+
+<div class="box">
+  <h2>Purpose</h2>
+  <p>
+    This dashboard stores reproducible numerical checks for known non-trivial zeros of the Riemann zeta function.
+  </p>
+  <pre>zeta(rho) ≈ 0
+Re(rho) ≈ 1/2</pre>
+  <p>
+    This dashboard does not claim that finite computation alone proves the full Riemann Hypothesis.
+    It records numerical evidence and structural alignment data for the proposed zero-axis interpretation.
+  </p>
+</div>
+
+<div class="box">
+  <h2>Core Formulas</h2>
+  <pre>ζ(ρ) = 0  →  Re(ρ) = 1/2
+
+0_f ⊂ 1 → A0 → {W, H} → P → C → E → Z → ρ ⊂ A0
+
+ρ ⊂ Z ⊂ A0
+
+E = ∏P = ∏Crit = total orbital field
+
+Z = H(A0)
+
+central rotation ⇔ center = 0.5
+
+phase difference(X, Rθ) = 180°
+r ≠ 0
+L_lower = r²
+L_lower > 0</pre>
+</div>
+
+<div class="box">
+  <h2>Run Summary</h2>
+  <p><strong>Zeros checked:</strong> 100</p>
+  <p><strong>Passed:</strong> 100 / 100</p>
+  <p><strong>mpmath precision:</strong> 80 decimal digits</p>
+  <p><strong>Tolerance:</strong> 1e-50</p>
+  <p><strong>First zero:</strong> (0.5 + 14.134725141734693790457251983562470270784257115699243175685567460149963429809257j)</p>
+  <p><strong>Last zero:</strong> (0.5 + 236.52422966581620580247550795566297868952949521218912370091896098781915038429233j)</p>
+</div>
+
+<div class="box">
+  <h2>Saved Data Files</h2>
+  <p><strong>CSV:</strong> zeta_zeros.csv</p>
+  <p><strong>CSV SHA256:</strong> <code>84ef847adf04edcf6b93ae1a2d9959e610feaea0f646bd5cc0838e9ecf6ad16b</code></p>
+  <p><strong>JSON:</strong> zeta_zeros.json</p>
+  <p><strong>JSON SHA256:</strong> <code>cb26fdf5f2c012488d8aaf6bb834cbb2e1f0f5eda98cc06a01003bba55fd5656</code></p>
+</div>
+
+<div class="box">
+  <h2>Graph 1: Imaginary Parts</h2>
+  
+<svg viewBox="0 0 900 420" width="100%" height="420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imaginary Parts of Computed Zeta Zeros">
+  <style>
+    .axis { stroke: #222; stroke-width: 1.5; }
+    .grid { stroke: #ddd; stroke-width: 1; }
+    .line { fill: none; stroke: #1f4e79; stroke-width: 2; }
+    .point { fill: #1f4e79; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; fill: #222; }
+    .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #222; }
+    .tick { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+  </style>
+
+  <text class="title" x="450.0" y="25" text-anchor="middle">Imaginary Parts of Computed Zeta Zeros</text>
+
+  <line class="axis" x1="80" y1="50" x2="80" y2="350" />
+  <line class="axis" x1="80" y1="350" x2="870" y2="350" />
+
+  <line class="grid" x1="80" y1="50" x2="870" y2="50" />
+  <line class="grid" x1="80" y1="200.0" x2="870" y2="200.0" />
+  <line class="grid" x1="80" y1="350" x2="870" y2="350" />
+
+  <text class="tick" x="70" y="54" text-anchor="end">237</text>
+  <text class="tick" x="70" y="204.0" text-anchor="end">125</text>
+  <text class="tick" x="70" y="354" text-anchor="end">14.1</text>
+
+  <text class="tick" x="80" y="375" text-anchor="middle">1</text>
+  <text class="tick" x="870" y="375" text-anchor="middle">100</text>
+
+  <text class="label" x="450.0" y="400" text-anchor="middle">Zero index n</text>
+  <text class="label" x="20" y="210.0" text-anchor="middle" transform="rotate(-90 20 210.0)">Im(rho)</text>
+
+  <polyline class="line" points="80.00,350.00 87.98,340.71 95.96,335.33 103.94,328.02 111.92,324.64 119.90,318.36 127.88,313.87 135.86,310.62 143.84,304.31 151.82,301.92 159.80,297.61 167.78,292.92 175.76,289.01 183.74,287.01 191.72,281.23 199.70,278.58 207.68,275.25 215.66,271.85 223.64,266.94 231.62,265.00 239.60,262.04 247.58,257.22 255.56,254.76 263.54,251.13 271.52,249.27 279.49,244.30 287.47,241.38 295.45,239.74 303.43,235.75 311.41,232.39 319.39,229.14 327.37,226.82 335.35,224.50 343.33,219.29 351.31,218.15 359.29,214.85 367.27,212.28 375.25,208.82 383.23,205.34 391.21,203.21 399.19,201.45 407.17,197.05 415.15,194.27 423.13,192.23 431.11,188.98 439.09,187.28 447.07,182.75 455.05,180.57 463.03,178.69 471.01,176.01 478.99,172.11 486.97,170.20 494.95,166.65 502.93,165.47 510.91,162.64 518.89,158.47 526.87,156.47 534.85,154.78 542.83,151.63 550.81,149.14 558.79,145.76 566.77,143.54 574.75,140.96 582.73,139.86 590.71,135.14 598.69,133.33 606.67,131.05 614.65,128.44 622.63,126.36 630.61,123.27 638.59,119.67 646.57,118.70 654.55,116.50 662.53,113.55 670.51,110.03 678.48,108.61 686.46,105.66 694.44,103.48 702.42,101.95 710.40,97.56 718.38,95.91 726.36,93.62 734.34,91.99 742.32,88.61 750.30,86.35 758.28,83.50 766.26,81.26 774.24,79.65 782.22,77.46 790.20,73.55 798.18,71.33 806.16,70.36 814.14,66.89 822.12,65.57 830.10,62.28 838.08,59.69 846.06,57.11 854.04,56.12 862.02,53.82 870.00,50.00" />
+  <g class="point">
+    <circle cx="80.00" cy="350.00" r="3"></circle>
+<circle cx="87.98" cy="340.71" r="3"></circle>
+<circle cx="95.96" cy="335.33" r="3"></circle>
+<circle cx="103.94" cy="328.02" r="3"></circle>
+<circle cx="111.92" cy="324.64" r="3"></circle>
+<circle cx="119.90" cy="318.36" r="3"></circle>
+<circle cx="127.88" cy="313.87" r="3"></circle>
+<circle cx="135.86" cy="310.62" r="3"></circle>
+<circle cx="143.84" cy="304.31" r="3"></circle>
+<circle cx="151.82" cy="301.92" r="3"></circle>
+<circle cx="159.80" cy="297.61" r="3"></circle>
+<circle cx="167.78" cy="292.92" r="3"></circle>
+<circle cx="175.76" cy="289.01" r="3"></circle>
+<circle cx="183.74" cy="287.01" r="3"></circle>
+<circle cx="191.72" cy="281.23" r="3"></circle>
+<circle cx="199.70" cy="278.58" r="3"></circle>
+<circle cx="207.68" cy="275.25" r="3"></circle>
+<circle cx="215.66" cy="271.85" r="3"></circle>
+<circle cx="223.64" cy="266.94" r="3"></circle>
+<circle cx="231.62" cy="265.00" r="3"></circle>
+<circle cx="239.60" cy="262.04" r="3"></circle>
+<circle cx="247.58" cy="257.22" r="3"></circle>
+<circle cx="255.56" cy="254.76" r="3"></circle>
+<circle cx="263.54" cy="251.13" r="3"></circle>
+<circle cx="271.52" cy="249.27" r="3"></circle>
+<circle cx="279.49" cy="244.30" r="3"></circle>
+<circle cx="287.47" cy="241.38" r="3"></circle>
+<circle cx="295.45" cy="239.74" r="3"></circle>
+<circle cx="303.43" cy="235.75" r="3"></circle>
+<circle cx="311.41" cy="232.39" r="3"></circle>
+<circle cx="319.39" cy="229.14" r="3"></circle>
+<circle cx="327.37" cy="226.82" r="3"></circle>
+<circle cx="335.35" cy="224.50" r="3"></circle>
+<circle cx="343.33" cy="219.29" r="3"></circle>
+<circle cx="351.31" cy="218.15" r="3"></circle>
+<circle cx="359.29" cy="214.85" r="3"></circle>
+<circle cx="367.27" cy="212.28" r="3"></circle>
+<circle cx="375.25" cy="208.82" r="3"></circle>
+<circle cx="383.23" cy="205.34" r="3"></circle>
+<circle cx="391.21" cy="203.21" r="3"></circle>
+<circle cx="399.19" cy="201.45" r="3"></circle>
+<circle cx="407.17" cy="197.05" r="3"></circle>
+<circle cx="415.15" cy="194.27" r="3"></circle>
+<circle cx="423.13" cy="192.23" r="3"></circle>
+<circle cx="431.11" cy="188.98" r="3"></circle>
+<circle cx="439.09" cy="187.28" r="3"></circle>
+<circle cx="447.07" cy="182.75" r="3"></circle>
+<circle cx="455.05" cy="180.57" r="3"></circle>
+<circle cx="463.03" cy="178.69" r="3"></circle>
+<circle cx="471.01" cy="176.01" r="3"></circle>
+<circle cx="478.99" cy="172.11" r="3"></circle>
+<circle cx="486.97" cy="170.20" r="3"></circle>
+<circle cx="494.95" cy="166.65" r="3"></circle>
+<circle cx="502.93" cy="165.47" r="3"></circle>
+<circle cx="510.91" cy="162.64" r="3"></circle>
+<circle cx="518.89" cy="158.47" r="3"></circle>
+<circle cx="526.87" cy="156.47" r="3"></circle>
+<circle cx="534.85" cy="154.78" r="3"></circle>
+<circle cx="542.83" cy="151.63" r="3"></circle>
+<circle cx="550.81" cy="149.14" r="3"></circle>
+<circle cx="558.79" cy="145.76" r="3"></circle>
+<circle cx="566.77" cy="143.54" r="3"></circle>
+<circle cx="574.75" cy="140.96" r="3"></circle>
+<circle cx="582.73" cy="139.86" r="3"></circle>
+<circle cx="590.71" cy="135.14" r="3"></circle>
+<circle cx="598.69" cy="133.33" r="3"></circle>
+<circle cx="606.67" cy="131.05" r="3"></circle>
+<circle cx="614.65" cy="128.44" r="3"></circle>
+<circle cx="622.63" cy="126.36" r="3"></circle>
+<circle cx="630.61" cy="123.27" r="3"></circle>
+<circle cx="638.59" cy="119.67" r="3"></circle>
+<circle cx="646.57" cy="118.70" r="3"></circle>
+<circle cx="654.55" cy="116.50" r="3"></circle>
+<circle cx="662.53" cy="113.55" r="3"></circle>
+<circle cx="670.51" cy="110.03" r="3"></circle>
+<circle cx="678.48" cy="108.61" r="3"></circle>
+<circle cx="686.46" cy="105.66" r="3"></circle>
+<circle cx="694.44" cy="103.48" r="3"></circle>
+<circle cx="702.42" cy="101.95" r="3"></circle>
+<circle cx="710.40" cy="97.56" r="3"></circle>
+<circle cx="718.38" cy="95.91" r="3"></circle>
+<circle cx="726.36" cy="93.62" r="3"></circle>
+<circle cx="734.34" cy="91.99" r="3"></circle>
+<circle cx="742.32" cy="88.61" r="3"></circle>
+<circle cx="750.30" cy="86.35" r="3"></circle>
+<circle cx="758.28" cy="83.50" r="3"></circle>
+<circle cx="766.26" cy="81.26" r="3"></circle>
+<circle cx="774.24" cy="79.65" r="3"></circle>
+<circle cx="782.22" cy="77.46" r="3"></circle>
+<circle cx="790.20" cy="73.55" r="3"></circle>
+<circle cx="798.18" cy="71.33" r="3"></circle>
+<circle cx="806.16" cy="70.36" r="3"></circle>
+<circle cx="814.14" cy="66.89" r="3"></circle>
+<circle cx="822.12" cy="65.57" r="3"></circle>
+<circle cx="830.10" cy="62.28" r="3"></circle>
+<circle cx="838.08" cy="59.69" r="3"></circle>
+<circle cx="846.06" cy="57.11" r="3"></circle>
+<circle cx="854.04" cy="56.12" r="3"></circle>
+<circle cx="862.02" cy="53.82" r="3"></circle>
+<circle cx="870.00" cy="50.00" r="3"></circle>
+  </g>
+</svg>
+
+</div>
+
+<div class="box">
+  <h2>Graph 2: Real-Part Error</h2>
+  <p>
+    In many computed cases, <code>mpmath.zetazero(n)</code> returns the zero directly on the critical line,
+    so this graph may appear as a flat zero-error line.
+  </p>
+  
+<svg viewBox="0 0 900 420" width="100%" height="420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Real-Part Error from the Critical Line">
+  <style>
+    .axis { stroke: #222; stroke-width: 1.5; }
+    .grid { stroke: #ddd; stroke-width: 1; }
+    .line { fill: none; stroke: #1f4e79; stroke-width: 2; }
+    .point { fill: #1f4e79; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; fill: #222; }
+    .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #222; }
+    .tick { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+  </style>
+
+  <text class="title" x="450.0" y="25" text-anchor="middle">Real-Part Error from the Critical Line</text>
+
+  <line class="axis" x1="80" y1="50" x2="80" y2="350" />
+  <line class="axis" x1="80" y1="350" x2="870" y2="350" />
+
+  <line class="grid" x1="80" y1="50" x2="870" y2="50" />
+  <line class="grid" x1="80" y1="200.0" x2="870" y2="200.0" />
+  <line class="grid" x1="80" y1="350" x2="870" y2="350" />
+
+  <text class="tick" x="70" y="54" text-anchor="end">1</text>
+  <text class="tick" x="70" y="204.0" text-anchor="end">0</text>
+  <text class="tick" x="70" y="354" text-anchor="end">-1</text>
+
+  <text class="tick" x="80" y="375" text-anchor="middle">1</text>
+  <text class="tick" x="870" y="375" text-anchor="middle">100</text>
+
+  <text class="label" x="450.0" y="400" text-anchor="middle">Zero index n</text>
+  <text class="label" x="20" y="210.0" text-anchor="middle" transform="rotate(-90 20 210.0)">|Re(rho) - 1/2|</text>
+
+  <polyline class="line" points="80.00,200.00 87.98,200.00 95.96,200.00 103.94,200.00 111.92,200.00 119.90,200.00 127.88,200.00 135.86,200.00 143.84,200.00 151.82,200.00 159.80,200.00 167.78,200.00 175.76,200.00 183.74,200.00 191.72,200.00 199.70,200.00 207.68,200.00 215.66,200.00 223.64,200.00 231.62,200.00 239.60,200.00 247.58,200.00 255.56,200.00 263.54,200.00 271.52,200.00 279.49,200.00 287.47,200.00 295.45,200.00 303.43,200.00 311.41,200.00 319.39,200.00 327.37,200.00 335.35,200.00 343.33,200.00 351.31,200.00 359.29,200.00 367.27,200.00 375.25,200.00 383.23,200.00 391.21,200.00 399.19,200.00 407.17,200.00 415.15,200.00 423.13,200.00 431.11,200.00 439.09,200.00 447.07,200.00 455.05,200.00 463.03,200.00 471.01,200.00 478.99,200.00 486.97,200.00 494.95,200.00 502.93,200.00 510.91,200.00 518.89,200.00 526.87,200.00 534.85,200.00 542.83,200.00 550.81,200.00 558.79,200.00 566.77,200.00 574.75,200.00 582.73,200.00 590.71,200.00 598.69,200.00 606.67,200.00 614.65,200.00 622.63,200.00 630.61,200.00 638.59,200.00 646.57,200.00 654.55,200.00 662.53,200.00 670.51,200.00 678.48,200.00 686.46,200.00 694.44,200.00 702.42,200.00 710.40,200.00 718.38,200.00 726.36,200.00 734.34,200.00 742.32,200.00 750.30,200.00 758.28,200.00 766.26,200.00 774.24,200.00 782.22,200.00 790.20,200.00 798.18,200.00 806.16,200.00 814.14,200.00 822.12,200.00 830.10,200.00 838.08,200.00 846.06,200.00 854.04,200.00 862.02,200.00 870.00,200.00" />
+  <g class="point">
+    <circle cx="80.00" cy="200.00" r="3"></circle>
+<circle cx="87.98" cy="200.00" r="3"></circle>
+<circle cx="95.96" cy="200.00" r="3"></circle>
+<circle cx="103.94" cy="200.00" r="3"></circle>
+<circle cx="111.92" cy="200.00" r="3"></circle>
+<circle cx="119.90" cy="200.00" r="3"></circle>
+<circle cx="127.88" cy="200.00" r="3"></circle>
+<circle cx="135.86" cy="200.00" r="3"></circle>
+<circle cx="143.84" cy="200.00" r="3"></circle>
+<circle cx="151.82" cy="200.00" r="3"></circle>
+<circle cx="159.80" cy="200.00" r="3"></circle>
+<circle cx="167.78" cy="200.00" r="3"></circle>
+<circle cx="175.76" cy="200.00" r="3"></circle>
+<circle cx="183.74" cy="200.00" r="3"></circle>
+<circle cx="191.72" cy="200.00" r="3"></circle>
+<circle cx="199.70" cy="200.00" r="3"></circle>
+<circle cx="207.68" cy="200.00" r="3"></circle>
+<circle cx="215.66" cy="200.00" r="3"></circle>
+<circle cx="223.64" cy="200.00" r="3"></circle>
+<circle cx="231.62" cy="200.00" r="3"></circle>
+<circle cx="239.60" cy="200.00" r="3"></circle>
+<circle cx="247.58" cy="200.00" r="3"></circle>
+<circle cx="255.56" cy="200.00" r="3"></circle>
+<circle cx="263.54" cy="200.00" r="3"></circle>
+<circle cx="271.52" cy="200.00" r="3"></circle>
+<circle cx="279.49" cy="200.00" r="3"></circle>
+<circle cx="287.47" cy="200.00" r="3"></circle>
+<circle cx="295.45" cy="200.00" r="3"></circle>
+<circle cx="303.43" cy="200.00" r="3"></circle>
+<circle cx="311.41" cy="200.00" r="3"></circle>
+<circle cx="319.39" cy="200.00" r="3"></circle>
+<circle cx="327.37" cy="200.00" r="3"></circle>
+<circle cx="335.35" cy="200.00" r="3"></circle>
+<circle cx="343.33" cy="200.00" r="3"></circle>
+<circle cx="351.31" cy="200.00" r="3"></circle>
+<circle cx="359.29" cy="200.00" r="3"></circle>
+<circle cx="367.27" cy="200.00" r="3"></circle>
+<circle cx="375.25" cy="200.00" r="3"></circle>
+<circle cx="383.23" cy="200.00" r="3"></circle>
+<circle cx="391.21" cy="200.00" r="3"></circle>
+<circle cx="399.19" cy="200.00" r="3"></circle>
+<circle cx="407.17" cy="200.00" r="3"></circle>
+<circle cx="415.15" cy="200.00" r="3"></circle>
+<circle cx="423.13" cy="200.00" r="3"></circle>
+<circle cx="431.11" cy="200.00" r="3"></circle>
+<circle cx="439.09" cy="200.00" r="3"></circle>
+<circle cx="447.07" cy="200.00" r="3"></circle>
+<circle cx="455.05" cy="200.00" r="3"></circle>
+<circle cx="463.03" cy="200.00" r="3"></circle>
+<circle cx="471.01" cy="200.00" r="3"></circle>
+<circle cx="478.99" cy="200.00" r="3"></circle>
+<circle cx="486.97" cy="200.00" r="3"></circle>
+<circle cx="494.95" cy="200.00" r="3"></circle>
+<circle cx="502.93" cy="200.00" r="3"></circle>
+<circle cx="510.91" cy="200.00" r="3"></circle>
+<circle cx="518.89" cy="200.00" r="3"></circle>
+<circle cx="526.87" cy="200.00" r="3"></circle>
+<circle cx="534.85" cy="200.00" r="3"></circle>
+<circle cx="542.83" cy="200.00" r="3"></circle>
+<circle cx="550.81" cy="200.00" r="3"></circle>
+<circle cx="558.79" cy="200.00" r="3"></circle>
+<circle cx="566.77" cy="200.00" r="3"></circle>
+<circle cx="574.75" cy="200.00" r="3"></circle>
+<circle cx="582.73" cy="200.00" r="3"></circle>
+<circle cx="590.71" cy="200.00" r="3"></circle>
+<circle cx="598.69" cy="200.00" r="3"></circle>
+<circle cx="606.67" cy="200.00" r="3"></circle>
+<circle cx="614.65" cy="200.00" r="3"></circle>
+<circle cx="622.63" cy="200.00" r="3"></circle>
+<circle cx="630.61" cy="200.00" r="3"></circle>
+<circle cx="638.59" cy="200.00" r="3"></circle>
+<circle cx="646.57" cy="200.00" r="3"></circle>
+<circle cx="654.55" cy="200.00" r="3"></circle>
+<circle cx="662.53" cy="200.00" r="3"></circle>
+<circle cx="670.51" cy="200.00" r="3"></circle>
+<circle cx="678.48" cy="200.00" r="3"></circle>
+<circle cx="686.46" cy="200.00" r="3"></circle>
+<circle cx="694.44" cy="200.00" r="3"></circle>
+<circle cx="702.42" cy="200.00" r="3"></circle>
+<circle cx="710.40" cy="200.00" r="3"></circle>
+<circle cx="718.38" cy="200.00" r="3"></circle>
+<circle cx="726.36" cy="200.00" r="3"></circle>
+<circle cx="734.34" cy="200.00" r="3"></circle>
+<circle cx="742.32" cy="200.00" r="3"></circle>
+<circle cx="750.30" cy="200.00" r="3"></circle>
+<circle cx="758.28" cy="200.00" r="3"></circle>
+<circle cx="766.26" cy="200.00" r="3"></circle>
+<circle cx="774.24" cy="200.00" r="3"></circle>
+<circle cx="782.22" cy="200.00" r="3"></circle>
+<circle cx="790.20" cy="200.00" r="3"></circle>
+<circle cx="798.18" cy="200.00" r="3"></circle>
+<circle cx="806.16" cy="200.00" r="3"></circle>
+<circle cx="814.14" cy="200.00" r="3"></circle>
+<circle cx="822.12" cy="200.00" r="3"></circle>
+<circle cx="830.10" cy="200.00" r="3"></circle>
+<circle cx="838.08" cy="200.00" r="3"></circle>
+<circle cx="846.06" cy="200.00" r="3"></circle>
+<circle cx="854.04" cy="200.00" r="3"></circle>
+<circle cx="862.02" cy="200.00" r="3"></circle>
+<circle cx="870.00" cy="200.00" r="3"></circle>
+  </g>
+</svg>
+
+</div>
+
+<div class="box">
+  <h2>Graph 3: Zeta Error</h2>
+  <p>
+    This graph uses log10 scale for <code>|zeta(rho)|</code>.
+  </p>
+  
+<svg viewBox="0 0 900 420" width="100%" height="420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zeta Value Error at Computed Zeros">
+  <style>
+    .axis { stroke: #222; stroke-width: 1.5; }
+    .grid { stroke: #ddd; stroke-width: 1; }
+    .line { fill: none; stroke: #1f4e79; stroke-width: 2; }
+    .point { fill: #1f4e79; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; fill: #222; }
+    .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #222; }
+    .tick { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+  </style>
+
+  <text class="title" x="450.0" y="25" text-anchor="middle">Zeta Value Error at Computed Zeros</text>
+
+  <line class="axis" x1="80" y1="50" x2="80" y2="350" />
+  <line class="axis" x1="80" y1="350" x2="870" y2="350" />
+
+  <line class="grid" x1="80" y1="50" x2="870" y2="50" />
+  <line class="grid" x1="80" y1="200.0" x2="870" y2="200.0" />
+  <line class="grid" x1="80" y1="350" x2="870" y2="350" />
+
+  <text class="tick" x="70" y="54" text-anchor="end">-78.2</text>
+  <text class="tick" x="70" y="204.0" text-anchor="end">-79.6</text>
+  <text class="tick" x="70" y="354" text-anchor="end">-80.9</text>
+
+  <text class="tick" x="80" y="375" text-anchor="middle">1</text>
+  <text class="tick" x="870" y="375" text-anchor="middle">100</text>
+
+  <text class="label" x="450.0" y="400" text-anchor="middle">Zero index n</text>
+  <text class="label" x="20" y="210.0" text-anchor="middle" transform="rotate(-90 20 210.0)">log10(|zeta(rho)|)</text>
+
+  <polyline class="line" points="80.00,276.92 87.98,221.49 95.96,258.04 103.94,222.83 111.92,189.82 119.90,164.16 127.88,180.08 135.86,219.96 143.84,169.06 151.82,255.65 159.80,163.81 167.78,161.40 175.76,186.60 183.74,187.56 191.72,159.10 199.70,350.00 207.68,120.60 215.66,116.11 223.64,160.87 231.62,208.71 239.60,189.59 247.58,194.85 255.56,120.63 263.54,125.86 271.52,155.58 279.49,110.36 287.47,170.95 295.45,286.64 303.43,137.39 311.41,116.47 319.39,235.22 327.37,152.71 335.35,166.05 343.33,219.16 351.31,168.16 359.29,171.77 367.27,109.21 375.25,130.48 383.23,142.24 391.21,220.33 399.19,224.08 407.17,147.74 415.15,136.25 423.13,265.73 431.11,125.83 439.09,77.46 447.07,65.61 455.05,180.62 463.03,193.76 471.01,110.87 478.99,74.79 486.97,80.25 494.95,104.62 502.93,160.46 510.91,51.56 518.89,79.68 526.87,187.56 534.85,104.45 542.83,100.69 550.81,68.62 558.79,115.13 566.77,317.13 574.75,219.55 582.73,122.16 590.71,61.42 598.69,92.61 606.67,86.21 614.65,200.44 622.63,78.29 630.61,58.83 638.59,110.93 646.57,146.52 654.55,269.19 662.53,137.41 670.51,133.45 678.48,84.97 686.46,90.28 694.44,83.65 702.42,118.55 710.40,103.65 718.38,100.04 726.36,93.94 734.34,80.99 742.32,229.47 750.30,127.20 758.28,130.80 766.26,106.68 774.24,82.34 782.22,101.56 790.20,142.38 798.18,152.35 806.16,153.28 814.14,158.93 822.12,78.47 830.10,116.03 838.08,110.80 846.06,180.99 854.04,131.68 862.02,50.00 870.00,185.57" />
+  <g class="point">
+    <circle cx="80.00" cy="276.92" r="3"></circle>
+<circle cx="87.98" cy="221.49" r="3"></circle>
+<circle cx="95.96" cy="258.04" r="3"></circle>
+<circle cx="103.94" cy="222.83" r="3"></circle>
+<circle cx="111.92" cy="189.82" r="3"></circle>
+<circle cx="119.90" cy="164.16" r="3"></circle>
+<circle cx="127.88" cy="180.08" r="3"></circle>
+<circle cx="135.86" cy="219.96" r="3"></circle>
+<circle cx="143.84" cy="169.06" r="3"></circle>
+<circle cx="151.82" cy="255.65" r="3"></circle>
+<circle cx="159.80" cy="163.81" r="3"></circle>
+<circle cx="167.78" cy="161.40" r="3"></circle>
+<circle cx="175.76" cy="186.60" r="3"></circle>
+<circle cx="183.74" cy="187.56" r="3"></circle>
+<circle cx="191.72" cy="159.10" r="3"></circle>
+<circle cx="199.70" cy="350.00" r="3"></circle>
+<circle cx="207.68" cy="120.60" r="3"></circle>
+<circle cx="215.66" cy="116.11" r="3"></circle>
+<circle cx="223.64" cy="160.87" r="3"></circle>
+<circle cx="231.62" cy="208.71" r="3"></circle>
+<circle cx="239.60" cy="189.59" r="3"></circle>
+<circle cx="247.58" cy="194.85" r="3"></circle>
+<circle cx="255.56" cy="120.63" r="3"></circle>
+<circle cx="263.54" cy="125.86" r="3"></circle>
+<circle cx="271.52" cy="155.58" r="3"></circle>
+<circle cx="279.49" cy="110.36" r="3"></circle>
+<circle cx="287.47" cy="170.95" r="3"></circle>
+<circle cx="295.45" cy="286.64" r="3"></circle>
+<circle cx="303.43" cy="137.39" r="3"></circle>
+<circle cx="311.41" cy="116.47" r="3"></circle>
+<circle cx="319.39" cy="235.22" r="3"></circle>
+<circle cx="327.37" cy="152.71" r="3"></circle>
+<circle cx="335.35" cy="166.05" r="3"></circle>
+<circle cx="343.33" cy="219.16" r="3"></circle>
+<circle cx="351.31" cy="168.16" r="3"></circle>
+<circle cx="359.29" cy="171.77" r="3"></circle>
+<circle cx="367.27" cy="109.21" r="3"></circle>
+<circle cx="375.25" cy="130.48" r="3"></circle>
+<circle cx="383.23" cy="142.24" r="3"></circle>
+<circle cx="391.21" cy="220.33" r="3"></circle>
+<circle cx="399.19" cy="224.08" r="3"></circle>
+<circle cx="407.17" cy="147.74" r="3"></circle>
+<circle cx="415.15" cy="136.25" r="3"></circle>
+<circle cx="423.13" cy="265.73" r="3"></circle>
+<circle cx="431.11" cy="125.83" r="3"></circle>
+<circle cx="439.09" cy="77.46" r="3"></circle>
+<circle cx="447.07" cy="65.61" r="3"></circle>
+<circle cx="455.05" cy="180.62" r="3"></circle>
+<circle cx="463.03" cy="193.76" r="3"></circle>
+<circle cx="471.01" cy="110.87" r="3"></circle>
+<circle cx="478.99" cy="74.79" r="3"></circle>
+<circle cx="486.97" cy="80.25" r="3"></circle>
+<circle cx="494.95" cy="104.62" r="3"></circle>
+<circle cx="502.93" cy="160.46" r="3"></circle>
+<circle cx="510.91" cy="51.56" r="3"></circle>
+<circle cx="518.89" cy="79.68" r="3"></circle>
+<circle cx="526.87" cy="187.56" r="3"></circle>
+<circle cx="534.85" cy="104.45" r="3"></circle>
+<circle cx="542.83" cy="100.69" r="3"></circle>
+<circle cx="550.81" cy="68.62" r="3"></circle>
+<circle cx="558.79" cy="115.13" r="3"></circle>
+<circle cx="566.77" cy="317.13" r="3"></circle>
+<circle cx="574.75" cy="219.55" r="3"></circle>
+<circle cx="582.73" cy="122.16" r="3"></circle>
+<circle cx="590.71" cy="61.42" r="3"></circle>
+<circle cx="598.69" cy="92.61" r="3"></circle>
+<circle cx="606.67" cy="86.21" r="3"></circle>
+<circle cx="614.65" cy="200.44" r="3"></circle>
+<circle cx="622.63" cy="78.29" r="3"></circle>
+<circle cx="630.61" cy="58.83" r="3"></circle>
+<circle cx="638.59" cy="110.93" r="3"></circle>
+<circle cx="646.57" cy="146.52" r="3"></circle>
+<circle cx="654.55" cy="269.19" r="3"></circle>
+<circle cx="662.53" cy="137.41" r="3"></circle>
+<circle cx="670.51" cy="133.45" r="3"></circle>
+<circle cx="678.48" cy="84.97" r="3"></circle>
+<circle cx="686.46" cy="90.28" r="3"></circle>
+<circle cx="694.44" cy="83.65" r="3"></circle>
+<circle cx="702.42" cy="118.55" r="3"></circle>
+<circle cx="710.40" cy="103.65" r="3"></circle>
+<circle cx="718.38" cy="100.04" r="3"></circle>
+<circle cx="726.36" cy="93.94" r="3"></circle>
+<circle cx="734.34" cy="80.99" r="3"></circle>
+<circle cx="742.32" cy="229.47" r="3"></circle>
+<circle cx="750.30" cy="127.20" r="3"></circle>
+<circle cx="758.28" cy="130.80" r="3"></circle>
+<circle cx="766.26" cy="106.68" r="3"></circle>
+<circle cx="774.24" cy="82.34" r="3"></circle>
+<circle cx="782.22" cy="101.56" r="3"></circle>
+<circle cx="790.20" cy="142.38" r="3"></circle>
+<circle cx="798.18" cy="152.35" r="3"></circle>
+<circle cx="806.16" cy="153.28" r="3"></circle>
+<circle cx="814.14" cy="158.93" r="3"></circle>
+<circle cx="822.12" cy="78.47" r="3"></circle>
+<circle cx="830.10" cy="116.03" r="3"></circle>
+<circle cx="838.08" cy="110.80" r="3"></circle>
+<circle cx="846.06" cy="180.99" r="3"></circle>
+<circle cx="854.04" cy="131.68" r="3"></circle>
+<circle cx="862.02" cy="50.00" r="3"></circle>
+<circle cx="870.00" cy="185.57" r="3"></circle>
+  </g>
+</svg>
+
+</div>
+
+<div class="box">
+  <h2>Result Table</h2>
+  <table>
+    <tr>
+      <th>n</th>
+      <th>Re(rho)</th>
+      <th>Im(rho)</th>
+      <th>|Re(rho)-1/2|</th>
+      <th>|zeta(rho)|</th>
+      <th>Pass</th>
+    </tr>
+    
+        <tr>
+          <td>1</td>
+          <td>0.5</td>
+          <td>14.134725141734693790457251983562470270784257115699243175685567460149963429809257</td>
+          <td>0.0</td>
+          <td>5.2844440866440548475721599762604089220889185506948765238751852827690699085642952e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>0.5</td>
+          <td>21.022039638771554992628479593896902777334340524902781754629520403587598586068891</td>
+          <td>0.0</td>
+          <td>1.6648115393202190138093324987275947916376111741102317293455700234960876693928047e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>0.5</td>
+          <td>25.010857580145688763213790992562821818659549672557996672496542006745092098441644</td>
+          <td>0.0</td>
+          <td>7.8119665797054837861778474837645643933540237866863357946855938786181098294121117e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>0.5</td>
+          <td>30.424876125859513210311897530584091320181560023715440180962146036993329389333278</td>
+          <td>0.0</td>
+          <td>1.6191855859007924007464615175786642065428762205975421689108450728128524816245823e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>0.5</td>
+          <td>32.935061587739189690662368964074903488812715603517039009280003440784815608630551</td>
+          <td>0.0</td>
+          <td>3.2068502180053597269816440488282199372245908531014517236342536218169705571115459e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td>0.5</td>
+          <td>37.586178158825671257217763480705332821405597350830793218333001113622149089618537</td>
+          <td>0.0</td>
+          <td>5.4542764759156454403197594835571646265290399090248583251867673320630869474739241e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td>0.5</td>
+          <td>40.918719012147495187398126914633254395726165962777279536161303667253280528720071</td>
+          <td>0.0</td>
+          <td>3.9229038993475525245303169949532550804171682679891614155610780842608491685492892e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td>0.5</td>
+          <td>43.327073280914999519496122165406805782645668371836871446878893685521088322305054</td>
+          <td>0.0</td>
+          <td>1.7181576265388625446804452795472286349068894807031221171971815041194241469347659e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>9</td>
+          <td>0.5</td>
+          <td>48.005150881167159727942472749427516041686844001144425117775312519814090216416308</td>
+          <td>0.0</td>
+          <td>4.9275966722905532574056105689078209953461573642042747434577459772688428507100419e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>10</td>
+          <td>0.5</td>
+          <td>49.773832477672302181916784678563724057723178299676662100781955750433511611515739</td>
+          <td>0.0</td>
+          <td>8.2089091074177536671008454649880716579937566484678899303252745674026067089781101e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>11</td>
+          <td>0.5</td>
+          <td>52.970321477714460644147296608880990063825017888821224779900748140317564950304188</td>
+          <td>0.0</td>
+          <td>5.4942353302300325118041270735295573082736316345149364411843498692116854429788118e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>12</td>
+          <td>0.5</td>
+          <td>56.446247697063394804367759476706127552782264471716631845450969843958475280274506</td>
+          <td>0.0</td>
+          <td>5.7745798913737308729872058108637851627492231374548105192135832529133539450784905e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>13</td>
+          <td>0.5</td>
+          <td>59.34704400260235307965364867499221903109877280646666969812245175474680015269963</td>
+          <td>0.0</td>
+          <td>3.4272767343458641698312123825306099501696406193871718611390061287080540119574965e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>14</td>
+          <td>0.5</td>
+          <td>60.831778524609809844259901824524003802910090451219178257101348824808493667294921</td>
+          <td>0.0</td>
+          <td>3.3598755638430517115888909714182737835296822601282650515971425931445082747290797e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>15</td>
+          <td>0.5</td>
+          <td>65.112544048081606660875054253183705029348149295166722405966501086675343232668685</td>
+          <td>0.0</td>
+          <td>6.0562269379581325157437901739156366884609384230084298910685094984394718734570876e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>16</td>
+          <td>0.5</td>
+          <td>67.079810529494173714478828896522216770107144951745558874196669551694901218956197</td>
+          <td>0.0</td>
+          <td>1.1643053165317694654721554944399429845394905295581263009318798718617358309188348e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>17</td>
+          <td>0.5</td>
+          <td>69.54640171117397925292685752655473844301247420960251015732453999966338767227491</td>
+          <td>0.0</td>
+          <td>1.3437076373242121076357797062298557273126145184542761909715695588070400117888331e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>18</td>
+          <td>0.5</td>
+          <td>72.067157674481907582522107969826168390480906621456697086683306151488407372399608</td>
+          <td>0.0</td>
+          <td>1.4746105138654267727396146992375117044531883796812826471640744806673845985240325e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>19</td>
+          <td>0.5</td>
+          <td>75.704690699083933168326916762030345922811903530697400301647775301574197027706324</td>
+          <td>0.0</td>
+          <td>5.8382007619883585390018506209367011703153975788996205730560168201529910227169094e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>20</td>
+          <td>0.5</td>
+          <td>77.144840068874805372682664856304637015796032449234461041765231453151139164253715</td>
+          <td>0.0</td>
+          <td>2.1686247132359093683479758138794691019020967891814422751159516393046681767975584e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>21</td>
+          <td>0.5</td>
+          <td>79.337375020249367922763592877116228190613246743120030878438720497101541932677091</td>
+          <td>0.0</td>
+          <td>3.2221746592183032997149524593595537124444425982352786442295021751950134952482801e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>22</td>
+          <td>0.5</td>
+          <td>82.910380854086030183164837494770609497508880593782149146571306283235929086356619</td>
+          <td>0.0</td>
+          <td>2.8897423970021756658111595036460711602641803427126439651646547659992349539894181e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>23</td>
+          <td>0.5</td>
+          <td>84.735492980517050105735311206827741417106627934240818702735529689045271728930281</td>
+          <td>0.0</td>
+          <td>1.3429884685631191420317043087073869783915515066839990525850995655809411471052194e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>24</td>
+          <td>0.5</td>
+          <td>87.425274613125229406531667850919213252171886401269028186455557938439691049524831</td>
+          <td>0.0</td>
+          <td>1.205208456863429638914226146526551148177353272113875463907482942785047492261933e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>25</td>
+          <td>0.5</td>
+          <td>88.809111207634465423682348079509378395444893409818675042199871618814013559182198</td>
+          <td>0.0</td>
+          <td>6.5139556252689751553326491826762301664327279324065115194491528256118794939357692e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>26</td>
+          <td>0.5</td>
+          <td>92.491899270558484296259725241810684878721794027730646175096750489181028026058771</td>
+          <td>0.0</td>
+          <td>1.6610943938282513656679752437906378675428368662883916944817920946624898215034164e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>27</td>
+          <td>0.5</td>
+          <td>94.651344040519886966597925815208153937728027015654852019592474274513482105324558</td>
+          <td>0.0</td>
+          <td>4.7389577104099512678183781983320030686041017283782095159442435076087119619102169e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>28</td>
+          <td>0.5</td>
+          <td>95.870634228245309758741029219246781695256461224987998420529281651651106625360818</td>
+          <td>0.0</td>
+          <td>4.3217670065832643774105505641247659764539319296425417049813796385676997121583746e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>29</td>
+          <td>0.5</td>
+          <td>98.831194218193692233324420138622327820658039063428196102819321727565547639765553</td>
+          <td>0.0</td>
+          <td>9.492119901672881209079113023162360395456646479719126220364232517169869687728699e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>30</td>
+          <td>0.5</td>
+          <td>101.31785100573139122878544794029230890633286638430089479992831871523014308272931</td>
+          <td>0.0</td>
+          <td>1.4636108763201615107838474963212363192550351808115087642525560873514295957537418e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>31</td>
+          <td>0.5</td>
+          <td>103.72553804047833941639840810869528083448117306949576451988516579403652210830165</td>
+          <td>0.0</td>
+          <td>1.2528400517824504420243708042454448748903825228216894285052929019781273701706339e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>32</td>
+          <td>0.5</td>
+          <td>105.44662305232609449367083241411180899728275392853513848056944711418149444757596</td>
+          <td>0.0</td>
+          <td>6.9126275276430814628861751801400022260763194671822551726489811596376157635523922e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>33</td>
+          <td>0.5</td>
+          <td>107.1686111842764075151233519630861912134767078814047652792647104215524038209781</td>
+          <td>0.0</td>
+          <td>5.2453266591651477860682073015455026075329903936340575760234946938665257851377965e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>34</td>
+          <td>0.5</td>
+          <td>111.02953554316967452465645030994435041534596839007305684619079476550554454175989</td>
+          <td>0.0</td>
+          <td>1.7469894452895110997770812923337639900968486199152814145764888366748069108079336e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>35</td>
+          <td>0.5</td>
+          <td>111.8746591769926370856120787167705949603117498733858738166194196196907783644055</td>
+          <td>0.0</td>
+          <td>5.0210661025376054857941187613963328161721970364417027418211663891666788438261482e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>36</td>
+          <td>0.5</td>
+          <td>114.32022091545271276589093727619107980991765772382989228772843104130628757585284</td>
+          <td>0.0</td>
+          <td>4.6589411019548714298269527547789073209373778539343559840584505229680635830804396e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>37</td>
+          <td>0.5</td>
+          <td>116.22668032085755438216080431206475512732985123238322028386264231147470097947562</td>
+          <td>0.0</td>
+          <td>1.7009229438419923924650701595503409976075396666474842392079167522393434260836792e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>38</td>
+          <td>0.5</td>
+          <td>118.79078286597621732297913970269982434730621059280938278419371651419909632211177</td>
+          <td>0.0</td>
+          <td>1.0950919948804235677604835900136744251408410974572892124942700607282767346321851e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>39</td>
+          <td>0.5</td>
+          <td>121.37012500242064591894553297049992272300131063172874230257513263573463204165139</td>
+          <td>0.0</td>
+          <td>8.5859842548979386372380116275106953456151664129091968682135841101452559129862573e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>40</td>
+          <td>0.5</td>
+          <td>122.94682929355258820081746033077001649621438987386351721195003491528850877588262</td>
+          <td>0.0</td>
+          <td>1.7052431323245014700476112511784925869226544238574677796286023529834094310238752e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>41</td>
+          <td>0.5</td>
+          <td>124.25681855434576718473200796612992444157353877469356114035507691395906209728936</td>
+          <td>0.0</td>
+          <td>1.5778375205513434588035845734577613192192551626269973024038981661498702826498393e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>42</td>
+          <td>0.5</td>
+          <td>127.51668387959649512427932376690607626808830988155498248279977930068239612852599</td>
+          <td>0.0</td>
+          <td>7.6613806294444262681237906871133483653648015087099823104543503205216912475793325e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>43</td>
+          <td>0.5</td>
+          <td>129.57870419995605098576803390617997360864095326465943103047083999886089910511657</td>
+          <td>0.0</td>
+          <td>9.7197424751991525865778940365178314373130439398199923830033769540632961843567308e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>44</td>
+          <td>0.5</td>
+          <td>131.08768853093265672356637246150134905920354750297504538313992440777476524562002</td>
+          <td>0.0</td>
+          <td>6.6620612260523212122507581145501864271272063344967959013912572326080636711610498e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>45</td>
+          <td>0.5</td>
+          <td>133.49773720299758645013049204264060766497417494390467501510225885516301360078474</td>
+          <td>0.0</td>
+          <td>1.205871398697019280806940464165287832054622695963678194806470006304593742038662e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>46</td>
+          <td>0.5</td>
+          <td>134.75650975337387133132606415716973617839606861364716441697609317354841005683171</td>
+          <td>0.0</td>
+          <td>3.2818161321030876715679290566170239717409557141034551791882229072931030163078748e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>47</td>
+          <td>0.5</td>
+          <td>138.11604205453344320019155519028244785983527462414623568534482856865016723043041</td>
+          <td>0.0</td>
+          <td>4.1942910371211339195910056048514666144960052563879189667023740079634095653980278e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>48</td>
+          <td>0.5</td>
+          <td>139.73620895212138895045004652338246084679005256538260308137013541090386809148527</td>
+          <td>0.0</td>
+          <td>3.8793210456411918520298182983124149850378229602071699880505272464891112649027555e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>49</td>
+          <td>0.5</td>
+          <td>141.12370740402112376194035381847535509030066087974762003210466509596609475871813</td>
+          <td>0.0</td>
+          <td>2.9555316374432690954922811230254807343581869952389596318956873191538439813811332e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>50</td>
+          <td>0.5</td>
+          <td>143.11184580762063273940512386891392996623310243035463254859852295728069314413335</td>
+          <td>0.0</td>
+          <td>1.6433996424080405235820051354901049050074133545901195564676817867380504101457684e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>51</td>
+          <td>0.5</td>
+          <td>146.00098248676551854740250759642468242897574123309580363697688496658576093959477</td>
+          <td>0.0</td>
+          <td>3.4683342634655599982309442126677113274682912205069252991196139584237969570512516e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>52</td>
+          <td>0.5</td>
+          <td>147.42276534255960204952118501043150616877277525047683060101046081273818374432638</td>
+          <td>0.0</td>
+          <td>3.0974414729222101784424365203314022949352902788066931320617703052442427080307355e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>53</td>
+          <td>0.5</td>
+          <td>150.05352042078488035143246723695937062303732155952820044842911127506258214849742</td>
+          <td>0.0</td>
+          <td>1.8705193862810220649181918289703346939145467541060218750976641397178379356342721e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>54</td>
+          <td>0.5</td>
+          <td>150.92525761224146676185252467830562760242677047299671770031135495336323209786361</td>
+          <td>0.0</td>
+          <td>5.8881124416529629892767040400842709149003223274424181193246088499453995227280974e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>55</td>
+          <td>0.5</td>
+          <td>153.02469381119889619825654425518544650859043490414550667519976756379462099378149</td>
+          <td>0.0</td>
+          <td>5.6100352651292333611537921173562025810412808432787531327585404123478954020492113e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>56</td>
+          <td>0.5</td>
+          <td>156.11290929423786756975018931016919474653530850094292080385607815839431485039406</td>
+          <td>0.0</td>
+          <td>3.1344907578971792789066645202956901320763666499533138443570808038396815063196571e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>57</td>
+          <td>0.5</td>
+          <td>157.59759181759405988753050315849876573072389951914173353824961760978555942757878</td>
+          <td>0.0</td>
+          <td>3.3600908196603855138850476060146516863966066226384422272683498504393000307813111e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>58</td>
+          <td>0.5</td>
+          <td>158.84998817142049872417499477554027141433508304942696625772418341154552951370884</td>
+          <td>0.0</td>
+          <td>1.8771351392278725810032009199632971160837084414409573550147120807938258680233052e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>59</td>
+          <td>0.5</td>
+          <td>161.18896413759602751943734412936955436491579032747546657918809379411885842105026</td>
+          <td>0.0</td>
+          <td>2.0290425773244640017487979394964743019260466997963657056734152864078836566616666e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>60</td>
+          <td>0.5</td>
+          <td>163.03070968718198724331103900068799489696446141647768311520959169590179547839534</td>
+          <td>0.0</td>
+          <td>3.9412912071149864603027659380864928472598482104813629064244240722549507329429723e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>61</td>
+          <td>0.5</td>
+          <td>165.53706918790041883003891935487479732836725174506860447895315460558040614375757</td>
+          <td>0.0</td>
+          <td>1.5049507617645347835825198375705050276206588917318501990295501487658679018943058e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>62</td>
+          <td>0.5</td>
+          <td>167.18443997817451344095775624621037873646076924261676736110699343540896963318081</td>
+          <td>0.0</td>
+          <td>2.2991597096774503072850773510318549963092438258686313286798193077713189435655322e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>63</td>
+          <td>0.5</td>
+          <td>169.09451541556882148950587118143183479666764858044162508738214912188233449696486</td>
+          <td>0.0</td>
+          <td>1.7330748811341279622931816227305102613838609452106755156664631354090103958283995e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>64</td>
+          <td>0.5</td>
+          <td>169.91197647941169896669984359582179228839443712534137301854144160780084147837271</td>
+          <td>0.0</td>
+          <td>1.3011203306395557358528510928458695924898057209720566764847929577787867192064653e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>65</td>
+          <td>0.5</td>
+          <td>173.41153651959155295984611864934559525415606606342011793368228539153109409537853</td>
+          <td>0.0</td>
+          <td>4.5745322793379425573722396017777478280759894562656596875119456656364716250136266e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>66</td>
+          <td>0.5</td>
+          <td>174.75419152336572581337876245586691793875571762057166344561154743789971520822744</td>
+          <td>0.0</td>
+          <td>2.3985851399480782410366446430539837545606231066176413021698087182524737706820089e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>67</td>
+          <td>0.5</td>
+          <td>176.44143429771041888889264105786093352811849710880971534761261578625685719391352</td>
+          <td>0.0</td>
+          <td>2.7384932680788322182882269512349161278897939827724521803842346856401189573255016e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>68</td>
+          <td>0.5</td>
+          <td>178.37740777609997728583093541418442618313236146127250370148904080374884656464059</td>
+          <td>0.0</td>
+          <td>2.5735710121029236385900722452328511909271365587009800276325887779871733214265909e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>69</td>
+          <td>0.5</td>
+          <td>179.91648402025699613934003661205123745368760755301840654130067065381739073626792</td>
+          <td>0.0</td>
+          <td>3.2259857244037228813192199247104619201084371526446729408248090723879273989600178e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>70</td>
+          <td>0.5</td>
+          <td>182.20707848436646191540703722698779869079745777823990876663006454018784432308733</td>
+          <td>0.0</td>
+          <td>4.8260757562915512318881461579142741164086107742282670221721500812217347235993808e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>71</td>
+          <td>0.5</td>
+          <td>184.87446784838750880096064661723425841335102291195066777317864468070135343690018</td>
+          <td>0.0</td>
+          <td>1.6413959671119481513386019483036379223056838985550586227632654373181970579057188e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>72</td>
+          <td>0.5</td>
+          <td>185.59878367770747146652770426839264661293471764951328308891979623038512714732055</td>
+          <td>0.0</td>
+          <td>7.8576651241257247780991126782602021975818377157824107369426129511629429919434339e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>73</td>
+          <td>0.5</td>
+          <td>187.22892258350185199164154058613124301681073460399031915146420316373384879454512</td>
+          <td>0.0</td>
+          <td>6.2019612279760351755709543553322861287686421916102386797700341644184538343671739e-81</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>74</td>
+          <td>0.5</td>
+          <td>189.41615865601693708485228909984532449135710302319335435541994217710601735975366</td>
+          <td>0.0</td>
+          <td>9.4874770204723671100126472983320827226393314222463390171792861533063242027584133e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>75</td>
+          <td>0.5</td>
+          <td>192.02665636071378654728363142558343010583992029797709691628912343221021167651437</td>
+          <td>0.0</td>
+          <td>1.0300015373196947935272795000578851255258678030080995953668978939373412939104422e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>76</td>
+          <td>0.5</td>
+          <td>193.07972660384570404740220579437605460402061581054886013850435583088441369868964</td>
+          <td>0.0</td>
+          <td>2.8093321152220172644717184287032206183947941842111550487209041931086483261986272e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>77</td>
+          <td>0.5</td>
+          <td>195.26539667952923532146318781486225092690505245228692406011097663218439322458418</td>
+          <td>0.0</td>
+          <td>2.5170677463497287752685729155383984884587806902599807779910851967511791458299305e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>78</td>
+          <td>0.5</td>
+          <td>196.87648184095831694862226391469620773574602869194221548282317318163197138792566</td>
+          <td>0.0</td>
+          <td>2.8871234784316086451875754810967390863836008693453485057739522804079254520068461e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>79</td>
+          <td>0.5</td>
+          <td>198.01530967625191242491991870220886715506269543857099672153480159423928438573629</td>
+          <td>0.0</td>
+          <td>1.402108547883217086913901224434502111076380702358514801777009463154970576770655e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>80</td>
+          <td>0.5</td>
+          <td>201.26475194370378873301613342754817322240286363918673408063271979951963490248135</td>
+          <td>0.0</td>
+          <td>1.9085497183781898872752905116498256352412248566155319848451759897056397943379905e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>81</td>
+          <td>0.5</td>
+          <td>202.49359451414053427768666063786431582102024489942005390906915428511632975877392</td>
+          <td>0.0</td>
+          <td>2.0565946438756335263353668519354492515892828460124437587798085088430278541004122e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>82</td>
+          <td>0.5</td>
+          <td>204.18967180310455433071643838631368513653452922874190735095968021739916342917403</td>
+          <td>0.0</td>
+          <td>2.3333493492189520890599895291485555642224963624916178261880861264320599196990656e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>83</td>
+          <td>0.5</td>
+          <td>205.39469720216328602521237939069309092372291477204840700213409541714636556150967</td>
+          <td>0.0</td>
+          <td>3.0506220395289147921646091000502654823048884310527038713056567359085733345351135e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>84</td>
+          <td>0.5</td>
+          <td>207.90625888780620986150196790775364426865940376888399985865752750992867520526577</td>
+          <td>0.0</td>
+          <td>1.4111401403123749168324371969610720376175430137556543543427815519111216148443367e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>85</td>
+          <td>0.5</td>
+          <td>209.57650971685625985283564428988675217539078318132616246897745334620479801846774</td>
+          <td>0.0</td>
+          <td>1.1722196755706417535846050133771684917697158104948933737575113386094566308099395e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>86</td>
+          <td>0.5</td>
+          <td>211.69086259536530756390748673071929425339403098293564373621001482077714146779409</td>
+          <td>0.0</td>
+          <td>1.0879175572171576009025314375689624074660645557567466359687507018174924798782472e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>87</td>
+          <td>0.5</td>
+          <td>213.34791935971266619063912202107260882189718327663306905985370458536595880550355</td>
+          <td>0.0</td>
+          <td>1.7924483049204061165945977761508373420094803308134918335559762337940125576732159e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>88</td>
+          <td>0.5</td>
+          <td>214.5470447834914232229442010725906910455998880530830764000816199190406547877892</td>
+          <td>0.0</td>
+          <td>2.9667922649223522513962641187720087300978887992372891384881883085461034295083006e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>89</td>
+          <td>0.5</td>
+          <td>216.16953850826370026586956335449812857545371427416411097637615056594096807109293</td>
+          <td>0.0</td>
+          <td>1.9928460171584893079349193495403371556212396975583958268978402816489299579237262e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>90</td>
+          <td>0.5</td>
+          <td>219.0675963490213789856772565904372412451491829270113513735578749932379095360415</td>
+          <td>0.0</td>
+          <td>8.5604404936974358388576291353505823405963954919743859738353887326133418153464784e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>91</td>
+          <td>0.5</td>
+          <td>220.71491883931400336911559263390633965676114507766196570161193204082565193747364</td>
+          <td>0.0</td>
+          <td>6.9646958061239854579802884981710534814891482256794950685270884139382633892990922e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>92</td>
+          <td>0.5</td>
+          <td>221.43070555469333873209747511927607795022233107731990937941995151378725384337308</td>
+          <td>0.0</td>
+          <td>6.8320373230239985996430810889294782605577649442934901707327304013970619836068126e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>93</td>
+          <td>0.5</td>
+          <td>224.00700025460433521172887552850489535608598994959552976295036068233454350042278</td>
+          <td>0.0</td>
+          <td>6.0772636784064061743733331820777127536203584591696475669914751087891144210396551e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>94</td>
+          <td>0.5</td>
+          <td>224.98332466958228750378252368052865677209005448558742698847775254720569200391545</td>
+          <td>0.0</td>
+          <td>3.2142158835339787140330464316710879387797066897714355266172450528461685738183578e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>95</td>
+          <td>0.5</td>
+          <td>227.42144427967929131046143616065963996396914832197662836489382008238968457163676</td>
+          <td>0.0</td>
+          <td>1.477182851536485797833635891548968164878843318720879756613332928856820108876421e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>96</td>
+          <td>0.5</td>
+          <td>229.33741330552534810776008330605574008275234138781851753263649248435617726401957</td>
+          <td>0.0</td>
+          <td>1.6459452660859460364877470780409069339107096211492220985899829484370752480700079e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>97</td>
+          <td>0.5</td>
+          <td>231.25018870049916477380618677001037260670849584312337140680603034414004772200528</td>
+          <td>0.0</td>
+          <td>3.8497921099398934262597120207088494112702681382688849116456758778526097842701763e-80</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>98</td>
+          <td>0.5</td>
+          <td>231.98723525318024860377166853919786220541983399456249648472682389683076367486389</td>
+          <td>0.0</td>
+          <td>1.0684265913877925383711528611259234997334611550308206981896988243925716935571963e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>99</td>
+          <td>0.5</td>
+          <td>233.69340417890830064070449473256978817953722775456583636301480873894015470124855</td>
+          <td>0.0</td>
+          <td>5.7941195756049500185763452029596923357751296222950601637030071381247839120394538e-79</td>
+          <td>True</td>
+        </tr>
+
+        <tr>
+          <td>100</td>
+          <td>0.5</td>
+          <td>236.52422966581620580247550795566297868952949521218912370091896098781915038429233</td>
+          <td>0.0</td>
+          <td>3.501770919222230149517010150373158182902608163791465993178243847729376427937692e-80</td>
+          <td>True</td>
+        </tr>
+
+  </table>
+</div>
+
+</body>
+</html>

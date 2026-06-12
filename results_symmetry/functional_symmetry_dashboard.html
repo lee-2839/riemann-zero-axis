@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Functional Symmetry Verification Dashboard</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 32px;
+    line-height: 1.55;
+}
+h1, h2 {
+    color: #222;
+}
+code, pre {
+    background: #f4f4f4;
+    padding: 2px 4px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+    font-size: 13px;
+}
+th {
+    background: #f0f0f0;
+}
+.pass {
+    color: green;
+    font-weight: bold;
+}
+.notice {
+    background: #fff8dc;
+    border: 1px solid #e6d28a;
+    padding: 12px;
+    margin: 16px 0;
+}
+.formula {
+    background: #f7f7f7;
+    border-left: 4px solid #777;
+    padding: 12px;
+    margin: 14px 0;
+    font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<h1>Functional Symmetry Verification Dashboard</h1>
+
+<div class="notice">
+This dashboard verifies the completed zeta symmetry Lambda(s) = Lambda(1-s).
+It does not claim to prove the full Riemann Hypothesis.
+</div>
+
+<h2>Zero-Axis Structural Meaning</h2>
+
+<div class="formula">
+1 → 0.5 | 0.5 = A0<br>
+A0 = central boundary / zero-axis<br>
+s ↔ 1-s = reflection around Re(s)=1/2
+</div>
+
+<h2>Standard Functional Symmetry</h2>
+
+<div class="formula">
+Lambda(s) = pi^(-s/2) Gamma(s/2) zeta(s)<br>
+Lambda(s) = Lambda(1-s)
+</div>
+
+<h2>Run Metadata</h2>
+
+<ul>
+<li>Created at UTC: 2026-06-12T03:58:47.939103+00:00</li>
+<li>mpmath decimal precision: 80</li>
+<li>Tolerance: 1e-60</li>
+<li>Test count: 8</li>
+<li>Passed: <span class="pass">8 / 8</span></li>
+</ul>
+
+<h2>Verification Results</h2>
+
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>s</th>
+<th>1-s</th>
+<th>Lambda(s)</th>
+<th>Lambda(1-s)</th>
+<th>Absolute Error</th>
+<th>Relative Error</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+
+            <tr>
+                <td>s_2_plus_3i</td>
+                <td>(2.0 + 3.0j)</td>
+                <td>(-1.0 - 3.0j)</td>
+                <td>(-0.032530601147794033636625669802985559356311785660181 - 0.06720314575163215489164724527688830263429806052524j)</td>
+                <td>(-0.032530601147794033636625669802985559356311785660181 - 0.06720314575163215489164724527688830263429806052524j)</td>
+                <td>6.588873714519077015217858782043761879819e-83</td>
+                <td>6.588873714519077015217858782043761879819e-83</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_2_plus_10i</td>
+                <td>(2.0 + 10.0j)</td>
+                <td>(-1.0 - 10.0j)</td>
+                <td>(-0.00032606952229878134791642102550841481106782624687194 - 0.00076493822645984628852137410025808246678329349652505j)</td>
+                <td>(-0.00032606952229878134791642102550841481106782624687194 - 0.00076493822645984628852137410025808246678329349652505j)</td>
+                <td>2.772044597350135042849880890903783999724e-84</td>
+                <td>2.772044597350135042849880890903783999724e-84</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_1_5_plus_14i</td>
+                <td>(1.5 + 14.0j)</td>
+                <td>(-0.5 - 14.0j)</td>
+                <td>(0.0000086295209965317817066318790460358484115894613588866 - 0.000013237037224232863182908918700377365444540339006408j)</td>
+                <td>(0.0000086295209965317817066318790460358484115894613588866 - 0.000013237037224232863182908918700377365444540339006408j)</td>
+                <td>8.202342686262536498116280411620681308754e-86</td>
+                <td>8.202342686262536498116280411620681308754e-86</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_0_25_plus_5i</td>
+                <td>(0.25 + 5.0j)</td>
+                <td>(0.75 - 5.0j)</td>
+                <td>(-0.021532897619651988284667121520570660842955393394797 + 0.0034587044826893543172801226097473642473491630437202j)</td>
+                <td>(-0.021532897619651988284667121520570660842955393394797 + 0.0034587044826893543172801226097473642473491630437202j)</td>
+                <td>3.518460105892201728593428471133337157178e-83</td>
+                <td>3.518460105892201728593428471133337157178e-83</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_0_75_plus_7i</td>
+                <td>(0.75 + 7.0j)</td>
+                <td>(0.25 - 7.0j)</td>
+                <td>(-0.0061063053299503892347119544973824322828094460468433 - 0.0009843801587713922841565649766600613786610398125455j)</td>
+                <td>(-0.0061063053299503892347119544973824322828094460468433 - 0.0009843801587713922841565649766600613786610398125455j)</td>
+                <td>1.660037442420064834897065060634378102392e-83</td>
+                <td>1.660037442420064834897065060634378102392e-83</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_minus_1_plus_4i</td>
+                <td>(-1.0 + 4.0j)</td>
+                <td>(2.0 - 4.0j)</td>
+                <td>(-0.021444527375215576574981750475495967311313838641373 + 0.032836636857333274962773274676092128222466373381601j)</td>
+                <td>(-0.021444527375215576574981750475495967311313838641373 + 0.032836636857333274962773274676092128222466373381601j)</td>
+                <td>7.366584760413099631391634809624720965281e-83</td>
+                <td>7.366584760413099631391634809624720965281e-83</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_3_plus_20i</td>
+                <td>(3.0 + 20.0j)</td>
+                <td>(-2.0 - 20.0j)</td>
+                <td>(-0.00000066737439244178826411106326900467828315748447682039 + 0.00000011515034793714275456674590952745049799500123756046j)</td>
+                <td>(-0.00000066737439244178826411106326900467828315748447682039 + 0.00000011515034793714275456674590952745049799500123756046j)</td>
+                <td>4.496206518806823505488058355483838479786e-87</td>
+                <td>4.496206518806823505488058355483838479786e-87</td>
+                <td>PASS</td>
+            </tr>
+            
+            <tr>
+                <td>s_0_4_plus_30i</td>
+                <td>(0.40000000000000002220446049250313080847263336181641 + 30.0j)</td>
+                <td>(0.59999999999999997779553950749686919152736663818359 - 30.0j)</td>
+                <td>(0.000000000032544706651962773765748588041547040479197898416999 - 0.000000000010873553229914343809577524265033105514789466273366j)</td>
+                <td>(0.000000000032544706651962773765748588041547040479197898416999 - 0.000000000010873553229914343809577524265033105514789466273366j)</td>
+                <td>3.430333342595537952795454677950926574544e-91</td>
+                <td>3.430333342595537952795454677950926574544e-91</td>
+                <td>PASS</td>
+            </tr>
+            
+</tbody>
+</table>
+
+<h2>File Hashes</h2>
+
+<ul>
+<li>CSV SHA256: <code>62609847567ba9be221f6b547a3324fce51f50e337dbe92fb9d875de7168a557</code></li>
+<li>JSON SHA256: <code>25369b4ec5ec172aa450b7f9bea73591404ebcf779e8118946907387dbd839ba</code></li>
+</ul>
+
+<h2>Interpretation</h2>
+
+<p>
+This verification checks the symmetry of the completed zeta function
+under the transformation s ↔ 1-s.
+</p>
+
+<p>
+In the zero-axis structural interpretation, this corresponds to
+the central boundary 0.5 | 0.5 = A0.
+The symmetry is centered around Re(s)=1/2.
+</p>
+
+<p>
+This numerical verification supports the structural role of the 1/2 axis,
+but it is not by itself a complete proof that all non-trivial zeros lie on that axis.
+</p>
+
+</body>
+</html>

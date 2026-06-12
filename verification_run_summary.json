@@ -1,0 +1,244 @@
+{
+  "created_at_utc": "2026-06-12T03:58:54.590048+00:00",
+  "python_executable": "C:\\Python314\\python.exe",
+  "total_commands": 7,
+  "successful_commands": 7,
+  "failed_commands": 0,
+  "results": [
+    {
+      "label": "1단계: 알려진 제타 영점 기본 검증",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_zeta.py"
+      ],
+      "returncode": 0,
+      "stdout": "zero #1\nrho        = (0.5+14.134725141734693790457251983562470270784257115699j)\nRe(rho)    = 0.5\nIm(rho)    = 14.134725141734693790457251983562470270784257115699\n|Re-1/2|   = 0.0\n|zeta(rho)|= 3.9537444742815649091120822734314576105647029615089e-51\npass       = True\n------------------------------------------------------------\nzero #2\nrho        = (0.5+21.022039638771554992628479593896902777334340524903j)\nRe(rho)    = 0.5\nIm(rho)    = 21.022039638771554992628479593896902777334340524903\n|Re-1/2|   = 0.0\n|zeta(rho)|= 2.0776515068681315627907723019124427545898938930283e-51\npass       = True\n------------------------------------------------------------\nzero #3\nrho        = (0.5+25.010857580145688763213790992562821818659549672558j)\nRe(rho)    = 0.5\nIm(rho)    = 25.010857580145688763213790992562821818659549672558\n|Re-1/2|   = 0.0\n|zeta(rho)|= 2.3675704743236443495317665466920856951814251257257e-50\npass       = True\n------------------------------------------------------------\nzero #4\nrho        = (0.5+30.424876125859513210311897530584091320181560023715j)\nRe(rho)    = 0.5\nIm(rho)    = 30.424876125859513210311897530584091320181560023715\n|Re-1/2|   = 0.0\n|zeta(rho)|= 6.7621885585067873101377678645778543489632047843546e-51\npass       = True\n------------------------------------------------------------\nzero #5\nrho        = (0.5+32.935061587739189690662368964074903488812715603517j)\nRe(rho)    = 0.5\nIm(rho)    = 32.935061587739189690662368964074903488812715603517\n|Re-1/2|   = 0.0\n|zeta(rho)|= 2.3870563047052004553057844957526724634509933411945e-50\npass       = True\n------------------------------------------------------------\nzero #6\nrho        = (0.5+37.586178158825671257217763480705332821405597350831j)\nRe(rho)    = 0.5\nIm(rho)    = 37.586178158825671257217763480705332821405597350831\n|Re-1/2|   = 0.0\n|zeta(rho)|= 4.0959817395501792769613284844094678265503051835687e-50\npass       = True\n------------------------------------------------------------\nzero #7\nrho        = (0.5+40.918719012147495187398126914633254395726165962777j)\nRe(rho)    = 0.5\nIm(rho)    = 40.918719012147495187398126914633254395726165962777\n|Re-1/2|   = 0.0\n|zeta(rho)|= 2.6342252718860263582975966744662208248636128910813e-50\npass       = True\n------------------------------------------------------------\nzero #8\nrho        = (0.5+43.327073280914999519496122165406805782645668371837j)\nRe(rho)    = 0.5\nIm(rho)    = 43.327073280914999519496122165406805782645668371837\n|Re-1/2|   = 0.0\n|zeta(rho)|= 1.8598884799484943147966425008942281950668926454191e-50\npass       = True\n------------------------------------------------------------\nzero #9\nrho        = (0.5+48.005150881167159727942472749427516041686844001144j)\nRe(rho)    = 0.5\nIm(rho)    = 48.005150881167159727942472749427516041686844001144\n|Re-1/2|   = 0.0\n|zeta(rho)|= 6.492378339663899280631852856890847026959288905685e-50\npass       = True\n------------------------------------------------------------\nzero #10\nrho        = (0.5+49.773832477672302181916784678563724057723178299677j)\nRe(rho)    = 0.5\nIm(rho)    = 49.773832477672302181916784678563724057723178299677\n|Re-1/2|   = 0.0\n|zeta(rho)|= 4.6747811427593286436158788267717486393661678411559e-50\npass       = True\n------------------------------------------------------------\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "label": "2단계: 알려진 제타 영점 대시보드 검증",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_zeta_dashboard_nompl.py",
+        "--count",
+        "100",
+        "--dps",
+        "80",
+        "--tol",
+        "1e-50"
+      ],
+      "returncode": 0,
+      "stdout": "Saved:\n- results\\zeta_zeros.csv\n- results\\zeta_zeros.json\n- results\\dashboard.html\n\nPassed: 100 / 100\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "label": "3단계: Hardy Z(t) 독립 임계선 스캔",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_independent_zeta_scan.py",
+        "--target-count",
+        "100",
+        "--t-max",
+        "250",
+        "--step",
+        "0.05",
+        "--dps",
+        "80",
+        "--tol-zeta",
+        "1e-50"
+      ],
+      "returncode": 0,
+      "stdout": "Independent critical-line scan\nThis script does not use mpmath.zetazero(n).\nScanning t from 0 to 250 with step 0.05\nTarget count: 100\n\n\nSaved:\n- results_independent\\independent_zeta_scan.csv\n- results_independent\\independent_zeta_scan.json\n- results_independent\\independent_scan_dashboard.html\n\nDetected: 100\nPassed: 100 / 100\n\nFirst detected zero:\n(0.5 + 14.1347251417346937904572519835624702707842571156992431756855676382522684434656137260598351j)\n\nLast detected zero:\n(0.5 + 236.524229665816205802475507955662978689529495212189123700918961193333194782037063212388301j)\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "label": "4단계: 오일러 곱장 검증",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_euler_product_dashboard.py",
+        "--prime-max",
+        "100000",
+        "--dps",
+        "80",
+        "--tol",
+        "1e-3"
+      ],
+      "returncode": 0,
+      "stdout": "\nEuler product verification complete\n\nPrime max: 100000\nPrime count: 9592\nmpmath dps: 80\nTolerance: 0.001\nPassed: 6 / 6\n\nSaved:\n- results_euler\\euler_product_verification.csv\n- results_euler\\euler_product_verification.json\n- results_euler\\euler_product_dashboard.html\n\nImportant:\nThis verifies the Euler product only in Re(s) > 1.\nIt is not a finite-computation proof of the full Riemann Hypothesis.\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "label": "5단계: 함수방정식 중심 대칭 검증",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_functional_symmetry_dashboard.py",
+        "--dps",
+        "80",
+        "--tol",
+        "1e-60"
+      ],
+      "returncode": 0,
+      "stdout": "\nFunctional symmetry verification complete\n\nmpmath dps: 80\nTolerance: 1e-60\nPassed: 8 / 8\n\nSaved:\n- results_symmetry\\functional_symmetry_verification.csv\n- results_symmetry\\functional_symmetry_verification.json\n- results_symmetry\\functional_symmetry_dashboard.html\n\nStructural meaning:\n1 -> 0.5 | 0.5 = A0\ns <-> 1-s reflection around Re(s)=1/2\n\nImportant:\nThis verifies the functional symmetry numerically.\nIt is not a finite-computation proof of the full Riemann Hypothesis.\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "label": "6단계: 영점 간격 및 0축 상승 정렬 검증",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_zero_spacing_dashboard.py",
+        "--count",
+        "100",
+        "--dps",
+        "80",
+        "--zero-tol",
+        "1e-50",
+        "--real-tol",
+        "1e-70"
+      ],
+      "returncode": 0,
+      "stdout": "\nZero spacing verification complete\n\nCount: 100\nmpmath dps: 80\nZero tolerance: 1e-50\nReal tolerance: 1e-70\nZero alignment passed: 100 / 100\nSpacing passed: 99 / 99\n\nSaved:\n- results_spacing\\zero_spacing_verification.csv\n- results_spacing\\zero_spacing_verification.json\n- results_spacing\\zero_spacing_dashboard.html\n\nStructural meaning:\nrho_n = 1/2 + i gamma_n\ngamma_(n+1) - gamma_n > 0\nascending placement on A0\n\nImportant:\nThis is a finite numerical verification.\nIt is not a complete proof of the full Riemann Hypothesis.\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "label": "7단계: 하한 잔차 구조 검증",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "verify_lower_residue_dashboard.py",
+        "--scale",
+        "1.0",
+        "--epsilon",
+        "1e-12"
+      ],
+      "returncode": 0,
+      "stdout": "\nLower residue verification complete\n\nScale: 1.0\nTarget phase difference: 180 degrees\nEpsilon: 1e-12\nPassed: 7 / 7\n\nSaved:\n- results_residue\\lower_residue_verification.csv\n- results_residue\\lower_residue_verification.json\n- results_residue\\lower_residue_dashboard.html\n\nStructural meaning:\nphase difference(X, R_theta) = 180 degrees\n180-degree phase difference -> r != 0\nL_lower = r^2 > 0\n\nImportant:\nThis is an internal structural verification.\nIt is not a direct standard zeta-zero proof.\n",
+      "stderr": "",
+      "success": true
+    }
+  ],
+  "output_checks": [
+    {
+      "label": "알려진 영점 CSV",
+      "path": "results\\zeta_zeros.csv",
+      "exists": true,
+      "sha256": "84ef847adf04edcf6b93ae1a2d9959e610feaea0f646bd5cc0838e9ecf6ad16b"
+    },
+    {
+      "label": "알려진 영점 JSON",
+      "path": "results\\zeta_zeros.json",
+      "exists": true,
+      "sha256": "cb26fdf5f2c012488d8aaf6bb834cbb2e1f0f5eda98cc06a01003bba55fd5656"
+    },
+    {
+      "label": "알려진 영점 HTML 대시보드",
+      "path": "results\\dashboard.html",
+      "exists": true,
+      "sha256": "9bfc1e7a7563efd3388ff6b4135c2fcf58973681412d33c16e77fd7764f46c47"
+    },
+    {
+      "label": "독립 임계선 스캔 CSV",
+      "path": "results_independent\\independent_zeta_scan.csv",
+      "exists": true,
+      "sha256": "178efe14e424818fb3b9a7b09a1e04cc98e387fbf2af27169417e22dcf4ec5ea"
+    },
+    {
+      "label": "독립 임계선 스캔 JSON",
+      "path": "results_independent\\independent_zeta_scan.json",
+      "exists": true,
+      "sha256": "e4e605640d2649143b6d55294a8f7eb1b5c8744636a38b2e80e74d018553097b"
+    },
+    {
+      "label": "독립 임계선 스캔 HTML 대시보드",
+      "path": "results_independent\\independent_scan_dashboard.html",
+      "exists": true,
+      "sha256": "c677328c7d117242d5dc33d2c7a59c001aa195447dbc4f4f8fa668031cdb0779"
+    },
+    {
+      "label": "오일러 곱장 CSV",
+      "path": "results_euler\\euler_product_verification.csv",
+      "exists": true,
+      "sha256": "b3b6e9521ec4c01bb914ffac9f9f2d44da8aaf7c3433cd31b9d3a780b62bf286"
+    },
+    {
+      "label": "오일러 곱장 JSON",
+      "path": "results_euler\\euler_product_verification.json",
+      "exists": true,
+      "sha256": "cc9df3e5603ce3ccc1c39a4109cb29f060e21f3392b45b0085add496049dbb36"
+    },
+    {
+      "label": "오일러 곱장 HTML 대시보드",
+      "path": "results_euler\\euler_product_dashboard.html",
+      "exists": true,
+      "sha256": "2fc51dad4369e5a576b5f94bc3c2b9d5f71df059bba209bf19543a80fd0caa26"
+    },
+    {
+      "label": "함수방정식 대칭 CSV",
+      "path": "results_symmetry\\functional_symmetry_verification.csv",
+      "exists": true,
+      "sha256": "62609847567ba9be221f6b547a3324fce51f50e337dbe92fb9d875de7168a557"
+    },
+    {
+      "label": "함수방정식 대칭 JSON",
+      "path": "results_symmetry\\functional_symmetry_verification.json",
+      "exists": true,
+      "sha256": "25369b4ec5ec172aa450b7f9bea73591404ebcf779e8118946907387dbd839ba"
+    },
+    {
+      "label": "함수방정식 대칭 HTML 대시보드",
+      "path": "results_symmetry\\functional_symmetry_dashboard.html",
+      "exists": true,
+      "sha256": "01649e8d0f4456e01eca23bafd6d59f608fcc9506c9200526b8dfcd138fb34b7"
+    },
+    {
+      "label": "영점 간격 CSV",
+      "path": "results_spacing\\zero_spacing_verification.csv",
+      "exists": true,
+      "sha256": "3d9b9b245adf6e55a74f3c85646f44c60c053776bec51d7ad3361af93db66848"
+    },
+    {
+      "label": "영점 간격 JSON",
+      "path": "results_spacing\\zero_spacing_verification.json",
+      "exists": true,
+      "sha256": "1519d53530127feafc15d420474a61d5c3c05964446ce2022a1124f334efe33a"
+    },
+    {
+      "label": "영점 간격 HTML 대시보드",
+      "path": "results_spacing\\zero_spacing_dashboard.html",
+      "exists": true,
+      "sha256": "266188e22244b41c01327b7019d985f61a4edfa31ac7472653e2bd7b0c759364"
+    },
+    {
+      "label": "하한 잔차 CSV",
+      "path": "results_residue\\lower_residue_verification.csv",
+      "exists": true,
+      "sha256": "43e55ed5f1d2c0f2018378bf57586e219c7baa4c9845cc75558cee88c1a4f8cf"
+    },
+    {
+      "label": "하한 잔차 JSON",
+      "path": "results_residue\\lower_residue_verification.json",
+      "exists": true,
+      "sha256": "377e4433eec713dbf3d83274dfb6338d635bb2fc91c2863795bce857bd124a49"
+    },
+    {
+      "label": "하한 잔차 HTML 대시보드",
+      "path": "results_residue\\lower_residue_dashboard.html",
+      "exists": true,
+      "sha256": "1d52fbf26f248ed3b1a679a2b1b8fee8556aaaeb97097464c7846ab7d86ee0c6"
+    }
+  ],
+  "structural_verification_stages": [
+    "1. Known zeta zero verification",
+    "2. Known zero dashboard verification",
+    "3. Independent Hardy Z(t) critical-line scan",
+    "4. Euler product field verification",
+    "5. Functional symmetry around Re(s)=1/2",
+    "6. Zero spacing and ascending zero-axis alignment",
+    "7. Lower residue structural verification"
+  ],
+  "important_notice": "This is a finite numerical and structural verification package. It does not claim that finite computation alone proves the full Riemann Hypothesis."
+}

@@ -1,0 +1,84 @@
+{
+  "created_at_utc": "2026-06-12T03:58:54.557616+00:00",
+  "scale": 1.0,
+  "target_theta_degrees": 180,
+  "epsilon": 1e-12,
+  "test_count": 7,
+  "note": "This verifies the structural relation: phase opposition generates residue, r != 0, and L_lower = r^2 > 0. It is an internal structural verification, not a standard proof of RH.",
+  "zero_axis_structure": {
+    "X": "diagonal phase of fixed cross",
+    "R_theta": "rotational phase",
+    "r": "lower residue",
+    "L_lower": "lower bound = r^2",
+    "structural_formula": "phase difference(X,R_theta)=180 degrees -> r != 0 -> L_lower=r^2>0"
+  },
+  "residue_model": {
+    "formula": "r = scale * abs(sin(theta/2))",
+    "target_theta_degrees": 180
+  },
+  "results": [
+    {
+      "theta_degrees": 0,
+      "scale": 1.0,
+      "r": 0.0,
+      "L_lower": 0.0,
+      "r_nonzero": false,
+      "L_lower_positive": false,
+      "pass": true
+    },
+    {
+      "theta_degrees": 30,
+      "scale": 1.0,
+      "r": 0.25881904510252074,
+      "L_lower": 0.06698729810778066,
+      "r_nonzero": true,
+      "L_lower_positive": true,
+      "pass": true
+    },
+    {
+      "theta_degrees": 60,
+      "scale": 1.0,
+      "r": 0.49999999999999994,
+      "L_lower": 0.24999999999999994,
+      "r_nonzero": true,
+      "L_lower_positive": true,
+      "pass": true
+    },
+    {
+      "theta_degrees": 90,
+      "scale": 1.0,
+      "r": 0.7071067811865476,
+      "L_lower": 0.5000000000000001,
+      "r_nonzero": true,
+      "L_lower_positive": true,
+      "pass": true
+    },
+    {
+      "theta_degrees": 120,
+      "scale": 1.0,
+      "r": 0.8660254037844386,
+      "L_lower": 0.7499999999999999,
+      "r_nonzero": true,
+      "L_lower_positive": true,
+      "pass": true
+    },
+    {
+      "theta_degrees": 150,
+      "scale": 1.0,
+      "r": 0.9659258262890683,
+      "L_lower": 0.9330127018922194,
+      "r_nonzero": true,
+      "L_lower_positive": true,
+      "pass": true
+    },
+    {
+      "theta_degrees": 180,
+      "scale": 1.0,
+      "r": 1.0,
+      "L_lower": 1.0,
+      "r_nonzero": true,
+      "L_lower_positive": true,
+      "pass": true
+    }
+  ]
+}
