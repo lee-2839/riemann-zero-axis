@@ -1,5 +1,7 @@
 # Zero-Axis Structural Interpretation of the Riemann Hypothesis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20656275.svg)](https://doi.org/10.5281/zenodo.20656275)
+
 This repository provides a reproducible verification package for the proposed **Zero-Axis structural interpretation of the Riemann Hypothesis**.
 
 - `papers/리만가설 구조공식.pdf` : Korean version
